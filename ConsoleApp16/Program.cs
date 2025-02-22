@@ -1,22 +1,23 @@
 ﻿Console.WriteLine("Hello World! OOP");
 
-var p = new Person("John", "Doe", new DateOnly(1990, 1, 1));
+var p1 = new Person("John", "Doe", new DateOnly(1990, 1, 1));
 
+var p2 = new Person("Ken", "Wu", new DateOnly(1989, 1, 1));
 
-// Console.WriteLine($"{p.firstName} {p.lastName} was born on {p.birthDate}");
+List<Person> people = [p1, p2];
+Console.WriteLine(people.Count());
 
-public class Person
+foreach (var person in people)
 {
-    public Person(string firstName, string lastName, DateOnly birthDate)
-    {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthDate = birthDate;
-    }
+    Console.WriteLine($"{person.FirstName} {person.LastName} was born on {person.BirthDate}");
+}
+
+public class Person(string firstName, string lastName, DateOnly birthDate)
+{
+    public string FirstName { get; } = firstName;
+    public string LastName { get; } = lastName;
+    public DateOnly BirthDate { get; } = birthDate;
 
 
-    private string firstName;
-    private string lastName;
-    private DateOnly birthDate;
 }
 
