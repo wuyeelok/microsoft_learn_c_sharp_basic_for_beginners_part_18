@@ -1,13 +1,18 @@
-﻿using System;
+﻿Console.WriteLine("Hello World! OOP");
 
-namespace MyNamespace
+var p = new Person()
 {
-    public class MyApp
-    {
-        public static void Main(string[] args)
-        {
-            Console.WriteLine("Part 18!");
-        }
-    }
+    firstName = "John",
+    lastName = "Doe",
+    birthDate = new DateOnly(1980, 1, 1)
+};
+
+Console.WriteLine($"{p.firstName} {p.lastName} was born on {p.birthDate}");
+
+public class Person
+{
+    public string firstName;
+    public string lastName;
+    public DateOnly birthDate;
 }
 
